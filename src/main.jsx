@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import { AppProvider } from './context/AppContext.jsx'
 import { LangProvider } from './context/LangContext.jsx'
+import ToastProvider from './components/ToastProvider.jsx'
 import './styles.css'
 
 createRoot(document.getElementById('root')).render(
@@ -11,9 +12,12 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <LangProvider>
         <AppProvider>
-          <App />
+          <ToastProvider>
+            <App />
+          </ToastProvider>
         </AppProvider>
       </LangProvider>
+      
     </BrowserRouter>
   </React.StrictMode>
 )
